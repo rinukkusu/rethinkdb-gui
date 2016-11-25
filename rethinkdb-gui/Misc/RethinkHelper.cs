@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using RethinkDb.Driver;
 using RethinkDb.Driver.Ast;
 using RethinkDb.Driver.Net;
 
-namespace rethinkdb_gui
+namespace rethinkdb_gui.Misc
 {
 	public class RethinkHelper
 	{
