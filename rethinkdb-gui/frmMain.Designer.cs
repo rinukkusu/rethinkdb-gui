@@ -28,19 +28,25 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
 			this.treeDatabases = new System.Windows.Forms.TreeView();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.treeImageList = new System.Windows.Forms.ImageList(this.components);
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// treeDatabases
 			// 
+			this.treeDatabases.ImageIndex = 0;
+			this.treeDatabases.ImageList = this.treeImageList;
 			this.treeDatabases.Location = new System.Drawing.Point(0, 27);
 			this.treeDatabases.Name = "treeDatabases";
+			this.treeDatabases.SelectedImageIndex = 0;
 			this.treeDatabases.Size = new System.Drawing.Size(171, 402);
 			this.treeDatabases.TabIndex = 0;
 			this.treeDatabases.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeDatabases_NodeMouseClick);
@@ -84,6 +90,13 @@
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
 			this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
 			// 
+			// treeImageList
+			// 
+			this.treeImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("treeImageList.ImageStream")));
+			this.treeImageList.TransparentColor = System.Drawing.Color.Transparent;
+			this.treeImageList.Images.SetKeyName(0, "database");
+			this.treeImageList.Images.SetKeyName(1, "table");
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,6 +122,7 @@
 		private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
+		private System.Windows.Forms.ImageList treeImageList;
 	}
 }
 

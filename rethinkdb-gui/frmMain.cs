@@ -58,7 +58,7 @@ namespace rethinkdb_gui
 				{
 					BeginInvoke(new Action(() =>
 					{
-						treeDatabases.Nodes.Add(database);
+						treeDatabases.Nodes.Add(database, database, 0);
 					}));					
 				}
 			});
@@ -74,15 +74,20 @@ namespace rethinkdb_gui
 				{
 					BeginInvoke(new Action(() =>
 					{
-						node.Nodes.Add(table);
+						node.Nodes.Add(table, table, 1);
 					}));
 				}
+
+				BeginInvoke(new Action(node.Expand));
 			});
 		}
 
 		private void treeDatabases_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
 		{
-			FillNodeWithTables(e.Node);
+			if (e.Node.GetNodeCount(false) == 0)
+			{
+				FillNodeWithTables(e.Node);
+			}
 		}
 
 		private void quitToolStripMenuItem_Click(object sender, EventArgs e)

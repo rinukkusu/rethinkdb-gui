@@ -32,7 +32,7 @@ namespace rethinkdb_gui.Misc
 
 		public async Task<List<string>> GetAllTables(string database)
 		{
-			return await Db.TableList().RunAsync<List<string>>(_connection);
+			return await R.Db(database).TableList().RunAsync<List<string>>(_connection);
 		}
 
 		public async Task<Cursor<JObject>> GetDocuments(string table, int limit = 20)
